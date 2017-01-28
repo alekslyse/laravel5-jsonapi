@@ -35,7 +35,7 @@ class Laravel54Provider extends Laravel51Provider
         /** @var \Illuminate\Routing\Route $routerObject */
         foreach ($this->getRouterCollection($router) as $routerObject) {
             if ($routerObject->getName() === $value['name']) {
-                $route = $routerObject->getPath();
+                $route = $routerObject->uri();
                 return $this->calculateFullPath($value, $route);
             }
         }
